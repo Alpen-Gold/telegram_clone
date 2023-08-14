@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uyga-vazifa-04</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/uyga-vazifa.css" />
+  </head>
+  <body>
+    <div class="big-cards">
+      <ul class="left-menu">
+        <li id="back" class="d-none pb-3">
+          <i class="fa-solid fa-arrow-left"></i>
+        </li>
+
+        <!-- <label for="file">jsfhgash</label> -->
+        <input type="" class="d-none" />
+
+        <li id="profile-btn">
+          <i class="fa-regular fa-user"></i>
+          <p>Profile</p>
+        </li>
+
+        <li id="chats-btn">
+          <i class="fa-regular fa-comments"></i>
+          <p>Chats</p>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <p>Call</p>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-users"></i>
+          <p>Ucer</p>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-folder"></i>
+          <p>Folder</p>
+        </li>
+
+        <button id="add-ucer" onclick="addNewUcer()">
+          <i class="fa-solid fa-user-plus"></i>
+        </button>
+      </ul>
+
+      <ul class="start-01">
+        <div class="d-flex align-items-center gap-3">
+          <input
+            placeholder="Search"
+            type="text"
+            name="parol"
+            id="poisq"
+            class="search-input"
+          />
+
+          <button class="btn me-2 my-2" onclick="searchUcer()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div id="cards-chats"></div>
+        <!-- <li>
+          <div style="display: flex; align-items: center">
+            <img src="img/5395360659543276337_99.jpg" alt="" />
+            <div>
+              <h1>Uzbek-odamchalar</h1>
+              <p>
+                <span style="color: #659cc8">Mushuk :</span> Odam-Hor mushuklar
+                paydo boldi dostlar🧛‍♀️
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p style="font-size: 15px; color: #8197a8">10:25</p>
+          </div>
+        </li> -->
+      </ul>
+
+      <div class="tugash">
+        <!-- <div id="info-ucer">
+          <div style="display: flex; align-items: center">
+            <img src="img/5395360659543276337_99.jpg" alt="" />
+            <div>
+              <h1>Uzbek-odamchalar</h1>
+            </div>
+          </div>
+
+
+          <div>
+            <p style="font-size: 15px; color: #8197a8">10:25</p>
+          </div>
+        </div> -->
+
+        <!-- --------------------------------- -->
+        <div
+          class="w-100 h-100 d-flex align-items-center justify-content-center"
+        >
+          <div class="not-meassege">choose who to communicate with</div>
+        </div>
+      </div>
+
+      <div id="profile" class="d-none">
+        <div class="card-profile">
+          <div class="profile-img mb-5">
+            <img src="" alt="" id="profile-img" />
+
+            <button id="edited-img">
+              <i class="fas fa-regular fa-camera-rotate"></i>
+            </button>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <input type="text" class="profile-inputs" id="profile-name" />
+            <input type="text" class="profile-inputs" id="profile-suraname" />
+            <input type="text" class="profile-inputs" id="profile-phone" />
+            <input type="text" class="profile-inputs" id="profile-nik-name" />
+          </div>
+
+          <div
+            class="d-flex align-items-center justify-content-center mt-4"
+            id="to-change"
+          >
+            <button class="btn" id="to-change">To change</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">New Ucer +</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              placeholder="Add New Ucer . . ."
+              id="modal-input"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" id="save-new-ucer" class="btn">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- profile edited img modal -->
+
+    <div
+      class="modal fade"
+      id="editedImgProfile"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              New Img Profile +
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              placeholder="Add New Img . . ."
+              id="modal-img-profile-input"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" id="modal-img-profile-btn" class="btn">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal img sent -->
+    <div
+      class="modal fade"
+      id="editedImgSendUcer"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              New Img Profile +
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              placeholder="Add New Img . . ."
+              id="modal-img-sent-input"
+              class="inputDisign"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button
+              type="button"
+              id="modal-img-send-btn"
+              class="btn"
+              onclick="modalImgSendBtn()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------- -->
+
+    <div
+      class="modal fade"
+      id="editedVideoSendUcer"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              New Video Profile +
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              placeholder="Add New Img . . ."
+              id="modal-video-sent-input"
+              class="inputDisign"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button
+              type="button"
+              id="modal-video-send-btn"
+              class="btn"
+              onclick="modalVideoSendBtn()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------- -->
+
+    <div
+      class="modal fade"
+      id="editedLocationSendUcer"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              New Location Profile +
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              placeholder="Add New Img . . ."
+              id="modal-location-sent-input"
+              class="inputDisign"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button
+              type="button"
+              id="modal-location-send-btn"
+              class="btn"
+              onclick="modalLocationSendBtn()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------------------- JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/uyga-vazifa-data.js"></script>
+    <script src="./js/uyga-vazifa.js"></script>
+  </body>
+</html>

@@ -1,0 +1,331 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: cadetblue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 450px) {
+  .left-menu li i {
+    font-size: 15px;
+  }
+  .left-menu p {
+    display: none;
+  }
+  #add-ucer {
+    height: 25px !important;
+    width: 25px !important;
+    font-size: 10px;
+    border-radius: 50%;
+    background-color: #283646;
+    color: white;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .start-01 {
+    min-width: 94vw !important;
+  }
+  .tugash {
+    display: none;
+  }
+}
+.btn {
+  color: white;
+  background-color: #0b1724;
+  padding: 8px 15px;
+  border: 2px solid #0b1724;
+  border-radius: 4px;
+  margin: 3px;
+  transition: 0.5s;
+}
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid white;
+  transition: 0.5s;
+  color: gold;
+}
+
+.big-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-menu {
+  text-align: center;
+  background-color: #0b1724;
+  min-width: 6vw !important;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #8197a8;
+  margin: 0;
+}
+
+.left-menu li i {
+  margin: 20px 0;
+  margin-bottom: 2px;
+  font-size: 24px;
+}
+
+.left-menu li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.left-menu li:hover {
+  background-color: #353c43;
+}
+
+.left-menu p {
+  margin: 0;
+  padding: 0;
+}
+
+.start-01 {
+  margin: 0;
+  height: 100vh;
+  max-width: 30vw;
+  overflow-x: hidden;
+  background-color: #182431;
+}
+
+.start-01 img,
+#info-ucer img {
+  object-fit: cover;
+  margin-right: 10px;
+  width: 60px;
+  border-radius: 50%;
+  height: 60px;
+}
+
+.start-01 li h1,
+#info-ucer h1 {
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.start-01 li,
+#info-ucer {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.start-01 li p,
+#info-ucer p {
+  color: #8197a8;
+  margin-top: 0;
+}
+
+.start-01 li h1,
+#info-ucer h1 {
+  margin-bottom: 0;
+}
+
+.start-01 li:hover {
+  background-color: #353c43;
+  cursor: pointer;
+}
+
+#info-ucer {
+  background-color: #353c43;
+}
+
+#poisq {
+  margin-left: 5px;
+  font-size: 16px;
+  width: 500px;
+  padding: 0 10px;
+  height: 30px;
+  background-color: #283646;
+  color: white;
+}
+
+.tugash .not-meassege {
+  background-color: rgba(33, 47, 62, 0.8039215686);
+  padding: 0 10px;
+  font-size: 18px;
+  border-radius: 15px;
+  color: white;
+}
+
+#info-ucer h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.mesege-rigth {
+  text-align: right;
+}
+.mesege-rigth .text-rigth {
+  background-color: #283646;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px 10px 0 10px;
+  margin: 5px;
+}
+
+.mesege-left {
+  text-align: left;
+}
+.mesege-left .text-left {
+  background-color: #283646;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px 10px 10px 0;
+  margin: 5px;
+}
+
+.tugash {
+  background-color: #0b1724;
+  width: 76vw;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+.send-message {
+  max-width: 100%;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.send-message input {
+  min-width: 100%;
+  padding: 10px 8px;
+  margin: 0 10px;
+  font-size: 16px;
+  max-width: 100%;
+  padding: 0 10px;
+  height: 30px;
+  background-color: #283646;
+  color: white;
+}
+
+#add-ucer {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #283646;
+  color: white;
+  margin-top: 20px;
+}
+
+#cards-chats {
+  position: relative !important;
+}
+
+#modal-input {
+  min-width: 100%;
+  padding: 10px 8px !important;
+  font-size: 16px;
+  width: 100%;
+  padding: 0 10px;
+  height: 30px;
+  background-color: #353c43;
+  color: white !important;
+}
+
+.modal-content {
+  background-color: #283646;
+  color: white !important;
+}
+
+#profile {
+  background-color: #182431;
+  width: 94vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#profile .profile-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#profile .profile-img img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#profile .profile-img #edited-img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  font-size: 23px;
+  background-color: #283646;
+  color: white;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 30px;
+  right: 235px;
+}
+#profile .profile-inputs {
+  background-color: #0b1724;
+  color: white;
+  padding: 8px 15px;
+  outline: none !important;
+  font-size: 16px;
+}
+
+#modal-img-profile-input {
+  min-width: 100%;
+  padding: 10px 8px !important;
+  font-size: 16px;
+  width: 100%;
+  padding: 0 10px;
+  height: 30px;
+  background-color: #353c43;
+  color: white !important;
+}
+
+.inputDisign {
+  min-width: 100%;
+  padding: 10px 8px !important;
+  font-size: 16px;
+  width: 100%;
+  padding: 0 10px;
+  height: 30px;
+  background-color: #353c43;
+  color: white !important;
+}
+
+#img-send-massege {
+  width: 500px;
+  object-fit: cover;
+  height: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=uyga-vazifa.css.map */
